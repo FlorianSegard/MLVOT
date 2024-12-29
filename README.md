@@ -1,7 +1,7 @@
 
 # People Tracking Using YOLO/Kalman Filter and IOU with a Small ONNX Model
 
-![People tracking](https://github.com/FlorianSegard/MLVOT/tree/main/TP4_TP5/tracked_output_video.mp4)  
+![People tracking](https://github.com/FlorianSegard/MLVOT/tree/main/TP4_TP5/tracked_output_video.gif)  
 *A comprehensive object tracking program combining multiple methodologies.*
 
 ## Project Overview
