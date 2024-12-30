@@ -8,10 +8,9 @@
 
 This project focuses on implementing a robust person-tracking system that maintains consistent IDs for individuals across video frames. The system integrates several components, including:
 
-1. **YOLO (You Only Look Once):** A real-time object detection model to detect people in individual frames.
-2. **Kalman Filter:** A state estimation algorithm to predict the next position of detected objects based on motion.
-3. **Intersection over Union (IOU):** A metric to associate predicted object positions with actual detections.
-4. **Small ONNX Model for Similarity Checking:** A lightweight neural network model to refine tracking by comparing object embeddings for identity consistency.
+1. **Kalman Filter:** A state estimation algorithm to predict the next position of detected objects based on motion.
+2. **Intersection over Union (IOU):** A metric to associate predicted object positions with actual detections.
+3. **Small ONNX Model for Similarity Checking:** A lightweight neural network model to refine tracking by comparing object embeddings for identity consistency.
 
 The integration of these components creates a system capable of handling real-world challenges in object tracking, such as occlusions, reappearances, and ID switching.
 
@@ -22,7 +21,7 @@ The integration of these components creates a system capable of handling real-wo
 ### 1. **YOLO Object Detection**
 - Used to detect people in individual frames.
 - Provides bounding boxes and confidence scores for each detected object.
-- Lightweight and efficient, suitable for real-time applications.
+- The bounding boxes detections are placed on a .txt file.
 
 ### 2. **Kalman Filter for Motion Prediction**
 - Tracks the state (position and velocity) of detected objects across frames.
@@ -69,17 +68,16 @@ The Kalman Filter is implemented to estimate the state of each detected object. 
 ### Challenge 2: Overlapping Objects
 - **Solution:** IOU ensures that detections are correctly matched to tracks even when objects overlap. The ONNX model adds an additional layer of identity verification.
 
-### Challenge 3: Real-Time Performance
-- **Solution:** Optimized YOLO and ONNX models were used, along with efficient Kalman Filter updates, to ensure real-time tracking.
+### Challenge 3: Performance
+- **Solution:** ONNX models was used, along with efficient Kalman Filter updates, to ensure the tracking.
 
 ---
 
 ## Results
-- The system successfully tracks multiple individuals across video frames with minimal ID switches.
-- Handles challenging scenarios such as occlusions, reappearances, and overlapping objects.
-- Demonstrates high accuracy and efficiency, making it suitable for real-world applications like surveillance and autonomous vehicles.
+- The system successfully tracks multiple individuals across video frames with minimal ID switches, however when the movement are unpredictable with the filter the ID may switch (high changing movement). The main problem of the final result is the model that is just a small onnx model and a better model could clearly improve it.
+- Demonstrates accuracy and efficiency.
 
 ---
 
 ## Conclusion
-This project combines state-of-the-art techniques in object detection, motion prediction, and identity verification to create a robust person-tracking system. The integration of a Kalman Filter, IOU-based matching, and a small ONNX model demonstrates how multiple methodologies can be effectively combined to overcome real-world challenges in tracking.
+This project combines different techniques in object detection, motion prediction, and identity verification to create a robust person-tracking system. The integration of a Kalman Filter, IOU-based matching, and a small ONNX model demonstrates how multiple methodologies can be effectively combined to overcome real-world challenges in tracking.
