@@ -34,6 +34,7 @@ The integration of these components creates a system capable of handling real-wo
 - A neural network model trained to compare object embeddings.
 - Checks the similarity between current and previous detections to ensure ID consistency.
 - Adds an additional layer of verification, especially in complex scenarios like overlapping or re-entering objects.
+- The weights of the kalman filter/IOU and onnx model can be modified I chosed to put 70% for the filter and 30% for the model after some testing it seemed to have the best result.
 
 ---
 
