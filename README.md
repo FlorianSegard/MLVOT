@@ -78,3 +78,8 @@ The Kalman Filter is implemented to estimate the state of each detected object. 
 
 ## Conclusion
 This project combines different techniques in object detection, motion prediction, and identity verification to create a robust person-tracking system. The integration of a Kalman Filter, IOU-based matching, and a small ONNX model demonstrates how multiple methodologies can be effectively combined to overcome real-world challenges in tracking.
+
+
+
+PS:
+If you need to run the project you need to put your images in an img1 folder in ADL-Rundle-6.
